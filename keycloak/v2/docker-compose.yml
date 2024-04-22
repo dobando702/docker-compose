@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  keycloak:
+    image: quay.io/keycloak/keycloak:latest
+    container_name: keycloak-quay
+    environment:
+      - container_name=keycloak
+      - DB_VENDOR=POSTGRES
+      - DB_ADDR=172.20.0.2
+      - DB_PORT=5433
+      - DB_DATABASE=keycloak_quay
+      - DB_USER=postgres
+      - DB_SCHEMA=public
+      - DB_PASSWORD=9897
+      - KEYCLOAK_ADMIN=admin    # Agregado para satisfacer las nuevas variables de entorno requeridas
+      - KEYCLOAK_ADMIN_PASSWORD=admin   # Agregado para satisfacer las nuevas variables de entorno requeridas
+    restart: unless-stopped
+    ports:
+      - 7129:8080
+    networks:
+      red-local-docker:
+        ipv4_address: 172.20.0.30
+    command: ["start-dev"]
+
+networks:
+  red-local-docker:
+    external: true
+
+
+
+#docker-compose -f dockerfile.yml up -d

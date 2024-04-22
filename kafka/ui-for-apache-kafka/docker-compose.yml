@@ -1,0 +1,33 @@
+version: '3'
+services:
+  kafka-ui:
+    image: provectuslabs/kafka-ui:latest
+    ports:
+      - 8888:8080
+    environment:
+      - KAFKA_CLUSTERS_0_NAME=dev
+      - KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS=192.168.3.2:9092
+      - KAFKA_CLUSTERS_0_ZOOKEEPER=192.168.3.2:2181
+      - KAFKA_CLUSTERS_1_NAME=qa
+      - KAFKA_CLUSTERS_1_BOOTSTRAPSERVERS=192.168.3.3:9092
+      - KAFKA_CLUSTERS_1_ZOOKEEPER=192.168.3.3:2181
+      - KAFKA_CLUSTERS_2_NAME=preprod-unicolombo
+      - KAFKA_CLUSTERS_2_BOOTSTRAPSERVERS=tronos-unicolombo.zabud.com.co:9092
+      - KAFKA_CLUSTERS_2_ZOOKEEPER=tronos-unicolombo.zabud.com.co:2181
+      - KAFKA_CLUSTERS_3_NAME=uat
+      - KAFKA_CLUSTERS_3_BOOTSTRAPSERVERS=192.168.3.10:9092
+      - KAFKA_CLUSTERS_3_ZOOKEEPER=192.168.3.10:2181
+      - KAFKA_CLUSTERS_4_NAME=kafka-docker-2
+      - KAFKA_CLUSTERS_4_BOOTSTRAPSERVERS=172.20.0.11:9092
+      - KAFKA_CLUSTERS_4_ZOOKEEPER=172.20.0.10:2181
+    networks:
+      red-local-docker:
+        ipv4_address: 172.20.0.6
+
+networks:
+  red-local-docker:
+    external: true
+      
+      #- KAFKA_CLUSTERS_3_NAME=qa
+      #- KAFKA_CLUSTERS_3_BOOTSTRAPSERVERS=192.168.3.3:9092
+      #- KAFKA_CLUSTERS_3_ZOOKEEPER=192.168.3.3:2181

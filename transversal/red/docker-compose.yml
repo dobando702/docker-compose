@@ -1,0 +1,19 @@
+version: '3'
+services:
+  dummy-service:
+    image: alpine
+    command: tail -f /dev/null
+    networks:
+      - mynetwork
+
+networks:
+  mynetwork:
+    name: red-local-docker
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16
+          gateway: 172.20.0.1
+
+
+#docker rm -f red-dummy-service-1

@@ -1,0 +1,29 @@
+import com.mongodb.ConnectionString;
+import com.mongodb.client.MongoClient;
+import com.mongodb.client.MongoClients;
+import org.springframework.data.mongodb.core.SimpleMongoClientDatabaseFactory;
+
+import java.util.Map;
+
+public class DynamicMongoClientDatabaseFactory extends SimpleMongoClientDatabaseFactory {
+
+    public DynamicMongoClientDatabaseFactory(Map<String, Map<String, String>> tenantConfigMap) {
+        super(createMongoClient(), ""); // No se especifica el nombre de la base de datos aquí
+        createDatabases(tenantConfigMap);
+    }
+
+    private static MongoClient createMongoClient() {
+        String connectionString = "mongodb://localhost:27017"; // Puedes usar la misma conexión para todos los inquilinos
+        return MongoClients.create(new ConnectionString(connectionString));
+    }
+
+    private void createDatabases(Map<String, Map<String, String>> tenantConfigMap) {
+        for (Map.Entry<String, Map<String, String>> entry : tenantConfigMap.entrySet()) {
+            String tenantName = entry.getKey();
+            Map<String, String> tenantConfig = entry.getValue();
+            String databaseName = tenantConfig.get("databaseName");
+            MongoClients.create(new ConnectionString(tenantConfig.get("connectionString")))
+                .getDatabase(databaseName);
+        }
+    }
+}

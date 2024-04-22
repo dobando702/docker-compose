@@ -1,0 +1,5 @@
+postgres =  172.20.0.2 
+keycloak =  172.20.0.3
+mongo =  172.20.0.4 
+redis =  172.20.0.5
+nocodeDb =  172.20.0.6

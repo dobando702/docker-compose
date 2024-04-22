@@ -1,0 +1,27 @@
+version: '3'
+services: 
+  keycloak:
+    image: jboss/keycloak:16.1.0
+    container_name:   keycloak
+    environment:
+        container_name: keycloak
+        DB_VENDOR: POSTGRES
+        DB_ADDR: 172.20.0.2
+        DB_PORT: 5432
+        DB_DATABASE: keycloak
+        DB_USER: postgres
+        DB_SCHEMA: public
+        DB_PASSWORD: sfuKTJGExBqRTpPJXubX
+        KEYCLOAK_USER: admin
+        KEYCLOAK_PASSWORD: admin
+    restart: unless-stopped
+    ports:
+        - 7029:8080
+    networks:
+      red-local-docker:
+        ipv4_address: 172.20.0.3
+
+networks:
+  red-local-docker:
+    external: true
+#docker-compose -f dockerfile.yml up -d
