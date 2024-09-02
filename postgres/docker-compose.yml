@@ -5,7 +5,7 @@ services:
     restart: unless-stopped
     environment:
       - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=1234
+      - POSTGRES_PASSWORD=1234      #sfuKTJGExBqRTpPJXubX
     ports:
       - '5432:5432'
     volumes: 

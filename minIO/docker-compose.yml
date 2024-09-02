@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  minio:
+    image: quay.io/minio/minio
+    container_name: minio
+    ports:
+      - "9200:9000"  # Usando el puerto 9200 en lugar del 9000
+      - "9001:9001"
+    environment:
+      MINIO_ROOT_USER: rootname
+      MINIO_ROOT_PASSWORD: 12345678
+    volumes:
+      - ~/minio/data:/data
+    command: server /data --console-address ":9001"

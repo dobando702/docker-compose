@@ -1,0 +1,42 @@
+version: '3'
+services: 
+  keycloak:
+    #image: jboss/keycloak:16.1.0
+    container_name:   keycloak-24
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: start-dev   --verbose -Dkeycloak.profile.feature.upload_scripts=enabled  
+    environment:
+        container_name: keycloak
+        #DB_VENDOR: POSTGRES
+        #DB_ADDR: 172.20.0.2
+        #DB_PORT: 5432
+        #DB_DATABASE:   
+        #DB_USER: postgres
+        #DB_SCHEMA: public
+        #DB_PASSWORD: sfuKTJGExBqRTpPJXubX
+        #KEYCLOAK_USER: admin
+        #KEYCLOAK_PASSWORD: admin
+        KEYCLOAK_ADMIN: admin
+        KEYCLOAK_ADMIN_PASSWORD: admin
+        KC_DB: postgres
+        KC_DB_URL_DATABASE: keycloak-unicolombo
+        KC_DB_URL_HOST: 172.20.0.2
+        KC_DB_URL_PORT: 5432
+        KC_DB_USERNAME: postgres
+        KC_DB_PASSWORD: sfuKTJGExBqRTpPJXubX
+        KC_DB_SCHEMA: public
+        KC_FEATURES: scripts
+        
+    #restart: unless-stopped
+    ports:
+        - 7029:8080
+    networks:
+      red-local-docker:
+        ipv4_address: 172.20.0.3
+
+networks:
+  red-local-docker:
+    external: true
+#docker-compose -f dockerfile.yml up -d

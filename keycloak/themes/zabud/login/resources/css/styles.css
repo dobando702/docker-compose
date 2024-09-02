@@ -1,0 +1,350 @@
+:root {
+  --zbBaseColor: #fff;
+  --zbtextColor:#263238;
+}
+
+body {
+  background: var(--zbBaseColor) !important;
+  color: var(--zbtextColor);
+  font-size: 18px;
+  box-sizing: border-box;
+  border-width: 0;
+  border-style: solid;
+}
+
+/* Zabud */
+
+.zb-wrapper {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+}
+
+.zb-content {
+  margin: 0 auto;
+}
+
+.wrapper-content {
+  height: 100%;
+  align-items: center;
+  display: flex;
+  background: #EBF3FA;
+  border-radius: 0px 20px 0px 0px;
+}
+
+.wrapper-content-form {
+  height: 100%;
+  align-items: center;
+  display: flex;
+  margin-right: 18%;
+  margin-left: -20%;
+}
+
+.scale-image {
+  transform: scale(1.25);
+}
+
+.scale-image-arrow{
+  transform: scale(1.8);
+}
+
+img {
+  border-style: solid;
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 1440px) {
+  .wrapper-content {
+    width: 80%;
+  }
+  .scale-image {
+    transform: none;
+  }
+}
+
+@media (max-width: 1440px) {
+  .scale-image {
+    transform: none;
+  }
+}
+
+@media (max-width: 940px) {
+  .wrapper-content-form {
+    margin-left: -12%;
+  }
+}
+
+@media (max-width: 740px) {
+  .wrapper-content {
+    width: 100%;
+  }
+  .zb-wrapper {
+    flex-direction: column;
+  }
+  .wrapper-content-form {
+    margin-right: inherit;
+    margin-left: inherit;
+    width: 100%;
+  }
+}
+
+/* Zabud Login */
+
+.login-pf {
+  background: var(--zbBaseColor) !important;
+}
+
+.zb-login-pf-page {
+  padding-top: 0 !important;
+  max-width: 18vh;
+  min-width: 18vh;
+  margin-bottom: 10%;
+}
+
+.zb-login-pf-header {
+  align-self: center;
+  text-align: -webkit-center;
+}
+
+.zb-header-left{
+  display: flex;
+  justify-content: space-between;
+}
+
+.zb-form-group {
+  margin-bottom: 20px;
+}
+
+.zb-login-pf-page .login-pf-header h1 {
+  font-size: 34px !important;
+}
+
+.image-zabud {
+  margin: 0 auto;
+}
+
+.title-form-login {
+  color: #263238;
+  font-family: Roboto;
+  font-weight: 400;
+  font-size: 34px;
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  width: max-content;
+}
+
+.zb-pf-c-form-control:hover, .zb-pf-c-form-control:focus, .zb-pf-c-form-control[aria-invalid="true"] {
+  border-bottom-color: inherit;
+  border-bottom-width: inherit;
+}
+
+.zb-pf-c-form-control:focus {
+  box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%), 0 0 6px rgb(0 136 206 / 60%);
+}
+
+.zb-pf-c-form-control {
+  width: 100%;
+  background: #FFFFFF;
+  border: 1px solid #E1E1E1;
+  box-sizing: border-box;
+  border-radius: 8px;
+  height: 35px;
+  text-indent: 20px;
+  font-size: 14px;
+  font-family: Roboto;
+  outline: none;
+  padding-left: 16px;
+}
+
+.zb-pf-c-form-control[aria-invalid="true"] {
+  box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%), 0 0 6px rgba(171, 37, 59, 0.726);
+}
+
+.zb-pf-c-form-control:placeholder {
+  font-style: normal;
+  color: var(--textOffColor);
+}
+
+.zb-img-padLock {
+  /*margin-top: -28px;*/
+  margin: -28px 0px 6px 0;
+  margin-left: 12px;
+  left: 6px;
+  top: 6px;
+  width: 20px;
+  height: 20px;
+}
+
+@media (max-width: 2732px) {
+  .zb-login-pf-page {
+    max-width: 40vh;
+    min-width: 40vh;
+  }
+}
+
+@media (max-width: 1500px) {
+  .zb-login-pf-page {
+    max-width: 60vh;
+    min-width: 60vh;
+  }
+}
+
+/* Zabud Reset Password Link */
+
+.form-group.login-pf-settings {
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.link-reset-password {
+  font-family: Roboto;
+  font-size: 15px;
+  font-weight: 500;
+  text-align: center;
+  font-style: normal;
+  line-height: 18px;
+  margin-top: 20px;
+  color: #263238;
+}
+
+/* Zabud button login */
+
+div#kc-form-buttons {
+  margin-top: 0;
+}
+
+.zb-button-login {
+  font-family: Roboto;
+  color: #FFFFFF;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 18px;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 15px;
+  background-color: #05AFF2;
+  border-style: none;
+  border-radius: 4px;
+  width: 100%;
+}
+
+/* init zb login update password */
+
+.wrapper-content-upd-pass {
+  width: 80vh;
+}
+
+.background-image-upd-pass {
+  height: 100%;
+  bottom: 0;
+}
+
+.subtitle-form-update-password {
+  color: #000000;
+  font-family: Roboto;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 15px;
+  line-height: 17px;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.zb-input-error-message-upss {
+  font-size: 14px;
+  margin-left: 12px;
+}
+
+@media (max-width: 740px) {
+  .wrapper-content-upd-pass {
+    width: 100%;
+    height: 80%;
+    background: #EBF3FA;
+    border-radius: 0px 20px 0px 0px;
+  }
+  .background-image-upd-pass {
+    width: 100%;
+  }
+}
+
+/* Zabud info */
+
+.zb-wrapper-content-info {
+  height: 100%;
+  background: #EBF3FA;
+}
+
+/*Zabud tooltip*/
+
+[data-tip] {
+	position:relative;
+  opacity: 0.9;
+}
+
+[data-tip]:before {
+  content: '';
+  display: none;
+  position: absolute;
+  z-index: 8;
+  font-size: 0;
+  line-height: 0;
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  left: 100%;
+  top: 50%;
+  margin-left: 10px;
+  margin-top: -4px;
+  border-right-style: solid;
+  border-right-width: 6px;
+}
+
+[data-tip]:after {
+  display: none;
+  content: attr(data-tip);
+  position: absolute;
+  top: 50%;
+  z-index: 10;
+  left: 100%;
+  margin-top: -20px;
+  margin-left: 16px;
+  background: #2C2C2C;
+  border-radius: 6px;
+  padding: 6px 8px;
+  font-family: Roboto;
+  font-weight: 400;
+  color: #FFFFFF;
+  font-size: 12px;
+  line-height: 16px;
+  width: 112px;
+}
+
+[data-tip]:focus-within:before,
+[data-tip]:focus-within:after {
+  opacity: 0.9;
+	display:block;
+}
+
+@media (max-width: 1321px) {
+  [data-tip]:before {
+    top: 0%;
+    margin-top: -10px;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    left: 50%;
+    margin-left: -8px;
+    border-top-color: #222;
+    border-top-width: 6px;
+  }
+  
+  [data-tip]:after {
+    top: 0%;
+    left: 50%;
+    margin-top: -53px;
+    margin-left: -52px;
+  }
+}
