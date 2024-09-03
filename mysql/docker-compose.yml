@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  db:
+    image: mysql:5.7
+    container_name: mysql_db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 1234
+      MYSQL_DATABASE: my-db
+      MYSQL_USER: dobando
+      MYSQL_PASSWORD: 1234
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      red-local-docker:
+        ipv4_address: 172.20.0.7
+
+volumes:
+  mysql_data:
+
+
+networks:
+  red-local-docker:
+    external: true
