@@ -4,3 +4,6 @@ mongo =  172.20.0.4
 redis =  172.20.0.5
 nocodeDb =  172.20.0.6
 mysql = 172.20.0.7
+mysql = 172.20.0.8
+jenkins = 172.20.0.9
+prestashop= 172.20.0.99

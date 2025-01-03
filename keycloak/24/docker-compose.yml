@@ -21,7 +21,7 @@ services:
         KEYCLOAK_ADMIN: admin
         KEYCLOAK_ADMIN_PASSWORD: admin
         KC_DB: postgres
-        KC_DB_URL_DATABASE: keycloak-unicolombo
+        KC_DB_URL_DATABASE: keycloak-24
         KC_DB_URL_HOST: 172.20.0.2
         KC_DB_URL_PORT: 5432
         KC_DB_USERNAME: postgres

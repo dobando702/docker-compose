@@ -1,4 +1,9 @@
 FROM keycloak-keycloak:latest
+# Configurar variables de entorno para UTF-8
+ENV LANG=C.UTF-8
+ENV LANGUAGE=C.UTF-8
+ENV LC_ALL=C.UTF-8
+
 #COPY themes/zabud /opt/keycloak/themes/zabud
 #COPY realm-export.json /tmp/realm-export.json
 #ENV KEYCLOAK_IMPORT=/tmp/realm-export.json

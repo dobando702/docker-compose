@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: sqlserver
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=YourStr0ng@Passw0rd   # Replace with a strong password
+    ports:
+      - "1433:1433"
+    volumes:
+      - sqlserver_data:/var/opt/mssql
+    networks:
+      red-local-docker:
+        ipv4_address: 172.20.0.8
+    restart: always
+    
+
+volumes:
+  sqlserver_data:
+
+networks:
+  red-local-docker:
+    external: true

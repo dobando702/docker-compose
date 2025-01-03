@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  jenkins:
+    build: .
+    expose:
+      - "8000"
+    container_name: jenkins
+    ports:
+      - "8000:8080"
+      - "50000:50000"
+    environment:
+      - JENKINS_ADMIN_ID=admin
+      - JENKINS_ADMIN_PASSWORD=K0ULhQO$66zbR%,
+    volumes:
+      - jenkins_home:/var/jenkins_home
+      - /usr/local/bin/docker:/usr/local/bin/docker  # Corregido: monta el archivo binario
+      - /var/run/docker.sock:/var/run/docker.sock 
+    restart: unless-stopped
+    #networks:
+      #red-local-docker:
+        #ipv4_address: 172.20.0.9
+
+#networks:
+  #red-local-docker:
+    #external: true
+
+volumes:
+  jenkins_home:

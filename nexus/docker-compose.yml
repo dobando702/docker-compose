@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  nexus:
+    image: sonatype/nexus3:latest
+    container_name: nexus
+    ports:
+      - "30431:8081" # Asignar el puerto 30431 al puerto 8081 del contenedor
+    volumes:
+      - nexus-data:/nexus-data # Persistencia de datos
+    environment:
+      - NEXUS_CONTEXT=/
+    restart: unless-stopped
+
+volumes:
+  nexus-data:
+    driver: local
