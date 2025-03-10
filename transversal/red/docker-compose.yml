@@ -16,4 +16,5 @@ networks:
           gateway: 172.20.0.1
 
 
+
 #docker rm -f red-dummy-service-1
