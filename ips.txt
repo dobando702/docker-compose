@@ -6,4 +6,6 @@ nocodeDb =  172.20.0.6
 mysql = 172.20.0.7
 mysql = 172.20.0.8
 jenkins = 172.20.0.9
+portainer = 172.20.0.10
+odoo = 172.20.0.11
 prestashop= 172.20.0.99
